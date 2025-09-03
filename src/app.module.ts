@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import 'dotenv/config';
+import { PetsModule } from './pets/pets.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    MongooseModule.forRoot(process.env.MONGO_URI || 'mongodb://localhost:27017/mypetsync'),
+    PetsModule,
+  ],
 })
 export class AppModule {}
