@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import 'dotenv/config';
 import { PetsModule } from './pets/pets.module';
+import { PetsModule } from './pets/pets.module';
 
 @Module({
   imports: [
